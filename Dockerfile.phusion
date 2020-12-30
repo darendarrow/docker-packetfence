@@ -1,7 +1,7 @@
 FROM phusion/baseimage:bionic-1.0.0
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
-RUN apt-get install -y linux-headers-$(uname -r)
+# RUN apt-get install -y linux-headers-$(uname -r)
 RUN echo 'deb http://inverse.ca/downloads/PacketFence/debian stretch stretch' > /etc/apt/sources.list.d/packetfence.list && \
   wget -O - https://inverse.ca/downloads/GPG_PUBLIC_KEY | sudo apt-key add - && \
   apt-get update && \
